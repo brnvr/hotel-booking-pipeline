@@ -1,0 +1,16 @@
+.venv/
+.uv-cache/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+data/output/*
+!data/output/.gitkeep
+.sparkStaging/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Downloaded from Kaggle; keep metadata CSVs in Git.
+data/input/hotel_bookings.csv

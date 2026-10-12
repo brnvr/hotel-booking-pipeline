@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "befly-hotel-pipeline"
+version = "0.1.0"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[project.scripts]
+befly-pipeline = "pipeline:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["pipeline", "constants", "download"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["transform*", "validation*"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}

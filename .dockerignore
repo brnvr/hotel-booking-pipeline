@@ -1,0 +1,10 @@
+*
+!requirements.txt
+!pyproject.toml
+!uv.lock
+!src/
+!src/**
+!tests/
+!tests/*.py
+**/__pycache__/
+**/*.egg-info/
