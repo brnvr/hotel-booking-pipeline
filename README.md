@@ -22,11 +22,11 @@ make run INPUT_DIR=/path/to/input OUTPUT_DIR=/path/to/output MASTER='local[4]'
 
 ## Input
 
-The country and hotel metadata CSVs are included. `hotel_bookings.csv` is downloaded from [Kaggle](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand), version 1, and ignored by Git. Existing files are reused; downloads are checksum-verified.
+The country and hotel metadata CSVs are included. `hotel_bookings.csv` is downloaded from [Kaggle](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand), version 1, and ignored by Git. Existing files are reused; downloads are checksum-verified. The download script lives in `scripts/download.py`.
 
 ```bash
-make download                   # download separately
-make download FORCE=1  # replace an existing bookings CSV
+make download           # download separately
+make download FORCE=1   # replace an existing bookings CSV
 ```
 
 If Kaggle requests authentication, configure `KAGGLE_USERNAME` and `KAGGLE_KEY` or `~/.kaggle/kaggle.json` on the host.
