@@ -1,4 +1,4 @@
-# BeFly hotel-booking pipeline
+# PySpark hotel-booking pipeline
 
 PySpark pipeline that processes hotel bookings through Bronze, Silver, and Gold using one Spark session. Transformations live in `src/transform/`; data-quality checks live in `src/validation/` and run between stages.
 
@@ -64,4 +64,4 @@ Revenue is an estimate based on ADR and nights. Nights sold measure booking volu
 
 On AWS, the three layers could use separate S3 prefixes with Parquet and year/month partitions. Glue jobs would run the transformations, Step Functions would coordinate transformation and validation steps, and the Glue Data Catalog would expose tables to Athena. Validation failures would stop downstream processing, with quality metrics and alerts in CloudWatch. IAM, KMS, and Lake Formation would control access, encryption, and governance.
 
-On Databricks, the same layers could use Delta tables in cloud storage, with Jobs coordinating execution and Unity Catalog managing access and lineage. Production ingestion would need batch identifiers, incremental processing, and transactional publication so retries do not duplicate data or expose incomplete batches.
+On Databricks, the same layers could use Delta tables in cloud storage, with Jobs coordinating execution and Unity Catalog managing access and lineage. Another option would be to convert the transformation functions into Spark Declarative Pipelines (SDP) models, letting the framework manage dependencies and execution. Production ingestion would need batch identifiers, incremental processing, and transactional publication so retries do not duplicate data or expose incomplete batches.
