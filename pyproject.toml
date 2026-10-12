@@ -13,7 +13,7 @@ befly-pipeline = "pipeline:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-py-modules = ["pipeline", "constants", "download"]
+py-modules = ["pipeline", "constants"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

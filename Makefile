@@ -18,7 +18,7 @@ download:
 		printf 'Using existing %s/hotel_bookings.csv\n' "$(INPUT_DIR)"; \
 	else \
 		$(UV) run --no-project --with kagglehub==0.3.13 \
-			python src/download.py --input-dir "$(INPUT_DIR)" \
+			python scripts/download.py --input-dir "$(INPUT_DIR)" \
 			$(if $(filter 1,$(FORCE)),--force,); \
 	fi
 

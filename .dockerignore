@@ -4,6 +4,8 @@
 !uv.lock
 !src/
 !src/**
+!scripts/
+!scripts/*.py
 !tests/
 !tests/*.py
 **/__pycache__/

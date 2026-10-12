@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import Mock, patch
 
-import download as downloader
+from scripts import download as downloader
 
 
 class DownloadTests(unittest.TestCase):

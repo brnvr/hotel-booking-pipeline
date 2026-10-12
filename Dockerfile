@@ -11,6 +11,7 @@ COPY pyproject.toml uv.lock requirements.txt ./
 COPY src/ src/
 RUN uv sync --locked --no-cache
 COPY tests/ tests/
+COPY scripts/ scripts/
 
 ENV PATH="/app/.venv/bin:$PATH"
 ENV PYSPARK_PYTHON=/app/.venv/bin/python
